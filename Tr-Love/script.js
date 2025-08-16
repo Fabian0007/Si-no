@@ -7,16 +7,23 @@ document.getElementById("btnNo").addEventListener("mouseover", function () {
   this.style.transform = `translate(${nuevaX}px, ${nuevaY}px)`;
 });
 
+document.getElementById("btnNo").addEventListener("pointerdown", function () {
+  const nuevaX = Math.random() * 450 - 225;
+  const nuevaY = Math.random() * -300 - 50;
+
+  this.style.transform = `translate(${nuevaX}px, ${nuevaY}px)`;
+});
+
 document.getElementById("btnSi").addEventListener("click", function () {
   Swal.fire({
     position: "top-center",
-    title: "Soy el hombre mas feliz del mundo🥰",
+    title: " 😘🥰",
     showConfirmButton: false,
     timer: 1500,
   });
 
   var parrafo = document.querySelector("#cuadroDialogo p");
-  parrafo.textContent = "El inicio de una hermosa historia ha comenzado...";
+  parrafo.textContent = "Ya lo siguiente es el retoño antes de casarse ;)";
   document.getElementById("btnNo").style.display = "none";
 
   window.requestAnimationFrame =
@@ -172,8 +179,6 @@ document.getElementById("btnSi").addEventListener("click", function () {
           ctx.fillRect(u.trace[k].x, u.trace[k].y, 1, 1);
         }
       }
-      //ctx.fillStyle = "rgba(255,255,255,1)";
-      //for (i = u.trace.length; i--;) ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
 
       window.requestAnimationFrame(loop, canvas);
     };
@@ -185,10 +190,3 @@ document.getElementById("btnSi").addEventListener("click", function () {
   else document.addEventListener("DOMContentLoaded", init, false);
 });
 
-document.getElementById("btnNo").addEventListener("click", function () {
-  Swal.fire({
-    imageUrl: "https://trneodavo.000webhostapp.com/meme/meme%20salvador.png",
-    imageHeight: 350,
-    imageAlt: "A tall image",
-  });
-});
